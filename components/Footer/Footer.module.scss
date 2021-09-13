@@ -1,0 +1,161 @@
+@import '../../styles/colors';
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+.footer {
+	position: relative;
+	width: 100%;
+	height: 550px;
+
+	// background-image: url('/IndexPage/img_footer1440.png');
+	// background-size: cover;
+	// background-position: center;
+	background: linear-gradient(129.34deg, #1355ff 20.09%, #ffffff 175.17%);
+
+	&::after {
+		content: '';
+		background-image: url('/IndexPage/border_top.svg');
+		background-repeat: repeat-x;
+		//background-size: cover;
+		background-position: top;
+		position: absolute;
+		right: 0;
+		top: -1px;
+		width: 100%;
+		height: 301px;
+	}
+
+	color: $white;
+
+	.container {
+		padding: 250px 30px 0;
+		max-width: 1170px;
+		margin: 0 auto;
+
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: 130px 60px 30px 30px;
+		align-items: center;
+		grid-template-areas:
+			'logo contacts'
+			'company .'
+			'doc .'
+			'law .';
+
+		.logo {
+			grid-area: logo;
+			text-decoration: none;
+
+			color: $white;
+
+			font-family: 'Roboto Slab', serif;
+			font-size: 26px;
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.contacts {
+			grid-area: contacts;
+
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 20px;
+
+			a {
+				text-decoration: none;
+				color: $white;
+
+				&:hover,
+				&:active {
+					transition: all 0.9s linear 0s;
+					text-decoration: underline;
+				}
+			}
+
+			.mail span {
+				position: relative;
+				top: 3px;
+			}
+
+			.tel span {
+				position: relative;
+				top: 5px;
+			}
+		}
+
+		.button {
+			grid-area: button;
+		}
+
+		.doc,
+		a.doc {
+			grid-area: doc;
+			font-size: 14px;
+
+			color: $light-grey;
+
+			&:hover,
+			&:active {
+				transition: all 0.9s linear 0s;
+				color: $white;
+			}
+		}
+
+		.name_company {
+			grid-area: company;
+			font-size: 14px;
+		}
+
+		.law {
+			grid-area: law;
+			position: relative;
+			font-size: 12px;
+			color: $light-grey;
+
+			.right_reserved {
+			}
+		}
+
+		.point {
+			position: absolute;
+			bottom: 120px;
+			right: 200px;
+		}
+
+		@media (max-width: 925px) {
+			padding: 230px 30px 0;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 50px 130px 30px 30px 30px;
+			grid-template-areas:
+				'logo'
+				'contacts'
+				'doc'
+				'company'
+				'law';
+
+			.contacts {
+				//margin: 0 0;
+				justify-content: flex-start;
+			}
+		}
+
+		@media (max-width: 640px) {
+			padding: 230px 30px 0;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 40px 150px 40px 40px 40px;
+
+			.logo {
+				text-align: center;
+			}
+
+			.contacts {
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				margin: 0 20px;
+			}
+		}
+	}
+}

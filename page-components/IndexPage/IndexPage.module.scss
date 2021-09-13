@@ -1,0 +1,10 @@
+@import '../../styles/colors';
+
+.indexPage {
+	position: relative;
+
+	& > div:nth-child(n + 2) {
+		width: 100%;
+		min-height: 300px;
+	}
+}

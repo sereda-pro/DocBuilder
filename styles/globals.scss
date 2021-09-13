@@ -1,27 +1,24 @@
-//@import url('./variables.scss');
+@import './colors';
 
-//$bgWhite: #f6f5f0;
-
-$bg: #f6f5f0; // #edf2f0;
-
-$neu-1: #ecf0f3;
-$neu-2: #d1d9e6;
-
-$white: #f9f9f9;
-$gray: #a0a5a8;
-$black: #181818;
-
-$purple: #4b70e2;
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
 html,
 body {
-	margin: 20px;
-	padding: 0;
+	overflow-x: hidden;
 
-	color: $gray;
+	width: 100vw;
+	height: 100vh;
 
-	background-color: $bg;
+	color: $black;
 
 	font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
+	font-size: 16px;
+
+	background: $background;
 }

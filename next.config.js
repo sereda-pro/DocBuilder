@@ -1,10 +1,6 @@
-// module.exports = {
-//   reactStrictMode: true,
-// };
-
 module.exports = {
-  reactStrictMode: true,
-  webpack(config, options) {
+	reactStrictMode: true,
+	webpack: (config) => {
 		config.module.rules.push({
 			loader: '@svgr/webpack',
 			options: {
@@ -20,4 +16,5 @@ module.exports = {
 
 		return config;
 	},
+	
 };

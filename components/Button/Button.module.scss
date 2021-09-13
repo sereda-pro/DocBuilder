@@ -1,0 +1,137 @@
+@import '../../styles/colors';
+
+.Button {
+	//display: inline-block;
+	position: relative;
+
+	padding: 10px 15px;
+
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: normal;
+
+	font-family: 'Roboto Slab', serif;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.primary {
+	transition: hover 0.3s ease 0s;
+
+	color: $white;
+
+	border: none;
+
+	border-radius: 8px / 30px;
+	background: $orange;
+
+	&:hover {
+		-webkit-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+	}
+
+	&:active {
+		-webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+	}
+
+	svg {
+		fill: &white;
+	}
+}
+
+.secondary {
+	transition: hover 0.3s ease 0s;
+
+	color: $blue;
+
+	border: 3px solid $light-blue;
+	border-radius: 8px / 30px;
+	background: $white;
+
+	&:hover {
+		-webkit-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+	}
+
+	&:active {
+		-webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+	}
+
+	svg {
+		fill: &white;
+	}
+}
+
+.ghost {
+	transition: hover 0.3s ease 0s;
+
+	color: $orange;
+
+	border: 3px solid $light-orange;
+	border-radius: 8px / 30px;
+	background: $white;
+
+	&:hover {
+		-webkit-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+	}
+
+	&:active {
+		-webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+	}
+
+	svg {
+		fill: &white;
+	}
+}
+
+.children {
+	display: inline-block;
+
+	transform: rotate(0);
+}
+
+.icon_arm {
+	position: absolute;
+	right: 30px;
+	bottom: -45px;
+
+	width: 31.4px;
+	height: 42px;
+}
+
+.arrow {
+	display: inline-block;
+
+	margin-left: 10px;
+}
+
+.down {
+	transition: all 0.3s;
+	transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+	.Button {
+		font-size: 13px;
+		font-weight: 300;
+	}
+
+	.icon_arm {
+		position: absolute;
+		right: 40px;
+		bottom: -12px;
+
+		width: 34px;
+		height: 26.4px;
+	}
+}
