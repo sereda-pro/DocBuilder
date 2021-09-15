@@ -5,14 +5,10 @@ import { IndexPageProps } from './IndexPage.props';
 import Head from 'next/head';
 import Link from 'next/link';
 import cn from 'classnames';
-import Image from 'next/image';
-import { Footer, Header, Main, Modal } from '../../components';
-import { useState } from 'react';
-
-
+import { Footer, Header, Main } from '../../components';
+import { Modal } from '../../components';
 
 export const IndexPageComponent = (): JSX.Element => {
-	const [modalActive, setModalActive] = useState<boolean>(false);
 
 	const navi = [
 		{title: 'Главная', link: '/'},
@@ -33,18 +29,10 @@ export const IndexPageComponent = (): JSX.Element => {
 				<Header 
 					className={styles.block}
 					navi={navi} 
-					setModalActive={setModalActive}
 				/>
 				<Main />
 				<Footer />
 			</div>
-			<Modal
-				active={modalActive}
-				setModalActive={setModalActive}
-			>
-				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, dolorum.</p>
-			</Modal>
-
 		</>
 	);
 };

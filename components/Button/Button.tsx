@@ -23,12 +23,7 @@ export function Button( {
 			})}
 			{...props}
 		>
-			<span className={cn({
-				[styles.children]: icon == true
-			})}>
-				{children}
-			</span>
-			
+			{children}
 			{arrow != 'none' && 
 				<span
 					className={cn(styles.arrow, {
@@ -38,7 +33,6 @@ export function Button( {
 					<ArrowIcon />
 				</span>
 			}
-
 			{icon != false && 
 				<span className={styles.icon_arm}>
 					<Icon_arm />

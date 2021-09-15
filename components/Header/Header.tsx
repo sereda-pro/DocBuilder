@@ -5,10 +5,15 @@ import IconLK from './Icon_lk.svg';
 import { Button } from '../Button/Button';
 import cn from 'classnames';
 import { Htag } from '../Htag/Htag';
+import { Modal } from '../Modal/Modal';
+import { useState } from 'react';
+import { FormContactUs } from '../FormContactUs/FormContactUs';
+import { Button as Btn } from 'antd';
 
-export function Header( {navi, setModalActive, children, ...props}: HeaderProps): JSX.Element {
 
-	// const [modalActive, setModalActive] = useState<boolean>(false);
+export function Header( {navi, children, ...props}: HeaderProps): JSX.Element {
+
+	const [modalActive, setModalActive] = useState<boolean>(false);
 
 	const navigation = navi && navi.map((item: Navi, i: number) => {
 		return <a href={item.link} className={styles.navi_link} key={i}>{item.title}</a>;
@@ -60,10 +65,20 @@ export function Header( {navi, setModalActive, children, ...props}: HeaderProps)
 					</ul>
 					<div className={styles.button}>
 						<Button appearence='primary' icon={true} onClick={() => setModalActive(true)}>Получить консультацию</Button>		
+						<Btn type="primary">Primary Button</Btn>
 					</div>				
 					<p>В двое дешевле штатного юриста.</p>
 				</div>
 			</header>
+
+			<Modal
+				modalActive={modalActive}
+				setModalActive={setModalActive}
+			>
+				<FormContactUs />
+				{/* <Btn type="primary">Primary Button</Btn> */}
+			</Modal>
+			
 		</>
 	);
 }

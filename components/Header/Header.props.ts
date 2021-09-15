@@ -8,5 +8,4 @@ export interface Navi{
 export interface HeaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLHeadElement>, HTMLHeadElement> {
 	children?: ReactNode;
 	navi?: Navi[];
-	setModalActive: (statusModalActive: boolean) => void;
 }

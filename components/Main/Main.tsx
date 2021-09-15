@@ -4,6 +4,7 @@ import { Button } from '../Button/Button';
 import cn from 'classnames';
 import { Htag } from '../Htag/Htag';
 
+
 export function Main( {children, ...props}: MainProps): JSX.Element {
 	
 	return (

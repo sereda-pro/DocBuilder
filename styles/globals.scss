@@ -1,5 +1,5 @@
 @import './colors';
-
+@import '~antd/dist/antd.css';
 *,
 *::after,
 *::before {
@@ -12,13 +12,11 @@ html,
 body {
 	overflow-x: hidden;
 
-	width: 100vw;
-	height: 100vh;
+	//width: 100vw;
+	min-height: 100vh;
 
 	color: $black;
 
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
-
-	background: $background;
 }
