@@ -2,13 +2,11 @@ import { HeaderProps, Navi } from './Header.props';
 import styles from './Header.module.scss';
 import Menu from './Menu.svg';
 import IconLK from './Icon_lk.svg';
-import { Button } from '../Button/Button';
+import { Button } from '../UI';
 import cn from 'classnames';
-import { Htag } from '../Htag/Htag';
-import { Modal } from '../Modal/Modal';
+import { Modal } from '../UI';
 import { useState } from 'react';
 import { FormContactUs } from '../FormContactUs/FormContactUs';
-import { Button as Btn } from 'antd';
 
 
 export function Header( {navi, children, ...props}: HeaderProps): JSX.Element {
@@ -56,7 +54,7 @@ export function Header( {navi, children, ...props}: HeaderProps): JSX.Element {
 						<a href="#">Закупки (44-ФЗ/223-ФЗ)</a>
 					</div>
 					<div className={styles.title}>
-						<Htag tag='h1'>Юридическая безопасность<br/>вашего бизнеса</Htag>
+						<h1>Юридическая безопасность<br/>вашего бизнеса</h1>
 					</div>
 					<ul className={styles.list}>
 						<li>Более 10 лет в отрасли</li>
@@ -64,21 +62,26 @@ export function Header( {navi, children, ...props}: HeaderProps): JSX.Element {
 						<li>Дистанционно сопровождаем бизнес из любого региона</li>
 					</ul>
 					<div className={styles.button}>
-						<Button appearence='primary' icon={true} onClick={() => setModalActive(true)}>Получить консультацию</Button>		
-						<Btn type="primary">Primary Button</Btn>
+						<Button 
+							appearence='primary' 
+							icon={true} 
+							onClick={() => setModalActive(true)}
+						>
+							Получить консультацию
+						</Button>		
+						
+						<Modal
+							modalActive={modalActive}
+							setModalActive={setModalActive}
+						>
+							<FormContactUs />
+						</Modal>
+
+
 					</div>				
 					<p>В двое дешевле штатного юриста.</p>
 				</div>
 			</header>
-
-			<Modal
-				modalActive={modalActive}
-				setModalActive={setModalActive}
-			>
-				<FormContactUs />
-				{/* <Btn type="primary">Primary Button</Btn> */}
-			</Modal>
-			
 		</>
 	);
 }

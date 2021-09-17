@@ -1,7 +1,6 @@
-@import '../../styles/colors';
+@import '../../../styles/colors';
 
 .Button {
-	//display: inline-block;
 	position: relative;
 
 	padding: 10px 15px;
@@ -26,15 +25,16 @@
 	background: $orange;
 
 	&:hover {
-		-webkit-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
-		-moz-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
-		box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		-webkit-box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
 	}
 
 	&:active {
-		-webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
-		-moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
-		box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		-webkit-box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		background: $dark-orange;
 	}
 
 	svg {
@@ -52,15 +52,16 @@
 	background: $white;
 
 	&:hover {
-		-webkit-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
-		-moz-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
-		box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		-webkit-box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
 	}
 
 	&:active {
-		-webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
-		-moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
-		box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		-webkit-box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		background: $light-grey;
 	}
 
 	svg {
@@ -78,15 +79,16 @@
 	background: $white;
 
 	&:hover {
-		-webkit-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
-		-moz-box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
-		box-shadow: 0 5px 15px 0 rgba(50, 50, 50, 0.65);
+		-webkit-box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.65);
 	}
 
 	&:active {
-		-webkit-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
-		-moz-box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
-		box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.65);
+		-webkit-box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		-moz-box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		box-shadow: 0 2px 4px 0 rgba(50, 50, 50, 0.65);
+		background: $light-grey;
 	}
 
 	svg {

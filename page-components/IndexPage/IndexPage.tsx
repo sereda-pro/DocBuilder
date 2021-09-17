@@ -1,5 +1,3 @@
-
-// import LogoIcon from './Images/Logo.svg';
 import styles from './IndexPage.module.scss';
 import { IndexPageProps } from './IndexPage.props';
 import Head from 'next/head';

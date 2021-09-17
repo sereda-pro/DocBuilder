@@ -1,0 +1,33 @@
+@import '../../../styles/colors';
+
+.wrap {
+	position: relative;
+
+	.input {
+		padding: 7px 15px;
+		color: $black;
+		border: 1px solid $light-grey;
+		outline-color: $orange;
+		border-radius: 5px;
+		box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+		font-size: 14px;
+		line-height: 22px;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.input::placeholder {
+		color: $light-blue;
+	}
+
+	.errorInput {
+		border: 1px solid red;
+	}
+
+	.error {
+		color: red;
+		font-size: 12px;
+		position: absolute;
+		right: 0;
+		bottom: -25px;
+	}
+}

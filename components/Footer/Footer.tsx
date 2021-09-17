@@ -1,7 +1,7 @@
 import { FooterProps } from './Footer.props';
 import styles from './Footer.module.scss';
 import cn from 'classnames';
-import { Button } from '../Button/Button';
+import { Button } from '../UI';
 import Icon_tel from './icon_tel.svg';
 import Icon_envelope from './Icon_envelope.svg';
 
