@@ -6,5 +6,85 @@ main {
 		max-width: 1170px;
 		margin: 0 auto;
 		padding: 100px 0;
+		position: relative;
 	}
+
+	.devider {
+		width: 100px;
+		height: 5px;
+		margin: 5px 0 50px 0;
+
+		background: linear-gradient(
+			90deg,
+			#1355ff 0%,
+			rgba(19, 85, 255, 0) 100%
+		);
+		border-radius: 1px;
+	}
+
+	.wrap {
+		margin-top: 50px;
+		display: grid;
+		grid-template-columns: repeat(4, 250px);
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas:
+			'strong . part .'
+			'. exp . online';
+		justify-items: center;
+		align-items: center;
+
+		.card {
+			width: 250px;
+			height: 250px;
+
+			background: #fff;
+			box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.15);
+			border-radius: 20px;
+			margin: 0px 0;
+			padding: 20px;
+			position: relative;
+
+			p {
+				margin-top: 15px;
+			}
+		}
+
+		.strong {
+			grid-area: strong;
+		}
+
+		.exp {
+			grid-area: exp;
+		}
+
+		.part {
+			grid-area: part;
+		}
+
+		.online {
+			grid-area: online;
+		}
+	}
+
+	.point {
+		position: absolute;
+		right: 280px;
+		top: 400px;
+	}
+
+	.circle {
+		position: absolute;
+		left: -90px;
+		top: 190px;
+	}
+
+	.ellipse {
+		position: absolute;
+		left: 160px;
+		top: 550px;
+	}
+}
+
+.wrap_ul {
+	margin-top: 50px;
 }

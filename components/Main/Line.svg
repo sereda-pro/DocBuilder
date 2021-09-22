@@ -1,0 +1,20 @@
+<svg width="357" height="593" viewBox="0 0 357 593" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-235" y="0" width="592" height="593">
+<ellipse cx="60.8265" cy="296.127" rx="200.681" ry="217.925" transform="rotate(-44.2932 60.8265 296.127)" fill="url(#paint0_linear)"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="-266.414" y="368.781" width="610.071" height="6.53776" transform="rotate(-44.2932 -266.414 368.781)" fill="#FFB21E" fill-opacity="0.5"/>
+<rect x="-223.803" y="412.456" width="610.071" height="6.53776" transform="rotate(-44.2932 -223.803 412.456)" fill="#FFB21E" fill-opacity="0.5"/>
+<rect x="-181.192" y="456.133" width="610.071" height="6.53776" transform="rotate(-44.2932 -181.192 456.133)" fill="#FFB21E" fill-opacity="0.5"/>
+<rect x="-138.58" y="499.809" width="610.071" height="6.53776" transform="rotate(-44.2932 -138.58 499.809)" fill="#FFB21E" fill-opacity="0.5"/>
+<rect x="-96.1394" y="537.562" width="610.071" height="6.53776" transform="rotate(-44.2932 -96.1394 537.562)" fill="#FFB21E" fill-opacity="0.5"/>
+<rect x="-53.5278" y="581.238" width="610.071" height="6.53776" transform="rotate(-44.2932 -53.5278 581.238)" fill="#FFB21E" fill-opacity="0.5"/>
+<rect x="-8.0437" y="622.111" width="610.071" height="6.53776" transform="rotate(-44.2932 -8.0437 622.111)" fill="#FFB21E" fill-opacity="0.5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="-151.895" y1="72.754" x2="333.582" y2="474.218" gradientUnits="userSpaceOnUse">
+<stop stop-color="#C4C4C4"/>
+<stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

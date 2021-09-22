@@ -1,25 +1,52 @@
-import { HeaderProps, Navi } from './Header.props';
+import { HeaderProps, Navi, LinkProps } from './Header.props';
 import styles from './Header.module.scss';
 import Menu from './Menu.svg';
 import IconLK from './Icon_lk.svg';
 import { Button } from '../UI';
 import cn from 'classnames';
 import { Modal } from '../UI';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FormContactUs } from '../FormContactUs/FormContactUs';
+import { Htag } from '../UI';
 
 
 export function Header( {navi, children, ...props}: HeaderProps): JSX.Element {
 
 	const [modalActive, setModalActive] = useState<boolean>(false);
+	const [anchor, setAnchor] = useState<string>();
+
+	useEffect(() => {
+		const element = document.getElementById(anchor);
+		if (element != null) {
+				window.scroll({
+				left: 0,
+				top: element.offsetTop + 30,
+				behavior: 'smooth'
+			});
+		}
+	}, [anchor]);
+
+	const handlerOnClickAnchor = (e, anchor: string) => {
+		e.preventDefault();
+		setAnchor(anchor);
+	};
 
 	const navigation = navi && navi.map((item: Navi, i: number) => {
-		return <a href={item.link} className={styles.navi_link} key={i}>{item.title}</a>;
+		return (
+			<a 
+				href={item.link} 
+				className={styles.navi_link} 
+				key={i}
+				onClick = {(e) => handlerOnClickAnchor(e, item.anchor)}
+			>
+				{item.title}
+			</a>
+		);
 	});
 	
 	return (
 		<>
-			<header className={styles.header}>
+			<header id='home' className={styles.header}>
 				<div className={styles.top_block}>
 					<div className={styles.contanier}>
 					
@@ -54,7 +81,7 @@ export function Header( {navi, children, ...props}: HeaderProps): JSX.Element {
 						<a href="#">Закупки (44-ФЗ/223-ФЗ)</a>
 					</div>
 					<div className={styles.title}>
-						<h1>Юридическая безопасность<br/>вашего бизнеса</h1>
+						<Htag tag='h1'>Юридическая безопасность<br/>вашего бизнеса</Htag>
 					</div>
 					<ul className={styles.list}>
 						<li>Более 10 лет в отрасли</li>
