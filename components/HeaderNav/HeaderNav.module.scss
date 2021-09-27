@@ -1,0 +1,92 @@
+@import '../../styles/colors';
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+.block {
+	.header_nav {
+		display: grid;
+		grid-template-columns: auto auto;
+		justify-content: space-between;
+
+		height: 70px;
+		border-bottom: 1px solid $light-blue;
+
+		.logo_wrap {
+			display: grid;
+			grid-template-columns: auto 30px auto;
+			align-items: center;
+
+			.logo {
+				position: relative;
+
+				text-decoration: none;
+
+				color: $white;
+
+				font-family: 'Roboto Slab', serif;
+				font-size: 24px;
+				font-weight: 300;
+			}
+
+			.vertical_line {
+				width: 0;
+				height: 35px;
+				margin: 0 15px;
+
+				border-right: 1px solid $light-blue;
+			}
+
+			.menu {
+				margin: 50% 0;
+			}
+		}
+
+		.navi_wrap {
+			display: grid;
+			grid-template-columns: auto auto;
+			align-items: center;
+			gap: 30px;
+
+			.navi {
+				display: grid;
+				grid-template-columns: repeat(4, auto);
+				align-items: center;
+				gap: 20px;
+			}
+
+			.navi_link {
+				display: inline-block;
+
+				text-decoration: none;
+
+				color: $white;
+
+				font-size: 14px;
+				font-weight: 400;
+
+				&:hover,
+				&:active {
+					text-decoration: none;
+
+					color: $orange;
+				}
+			}
+
+			@media (max-width: 760px) {
+				& {
+					grid-template-columns: auto;
+					gap: 0;
+
+					.navi {
+						display: none;
+					}
+				}
+			}
+
+			@media (max-width: 360px) {
+				& {
+					display: none;
+				}
+			}
+		}
+	}
+}

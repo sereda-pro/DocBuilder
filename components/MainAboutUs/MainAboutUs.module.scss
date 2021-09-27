@@ -1,0 +1,307 @@
+@import '../../styles/colors';
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+.about {
+	padding-top: 100px;
+	padding-bottom: 50px;
+
+	.htag {
+		font-weight: 600;
+
+		mark {
+			background-color: $orange;
+			border-radius: 2px;
+			padding: 0 3px;
+		}
+	}
+
+	.about_wrap {
+		margin-top: 100px;
+		position: relative;
+		display: grid;
+		grid-template-columns: auto 400px auto;
+		grid-template-rows: repeat(4, auto);
+		align-items: center;
+		justify-items: center;
+		justify-content: start;
+		grid-template-areas:
+			'a1 image .'
+			'a2 image a5'
+			'a3 image a6'
+			'a4 image a7';
+		gap: 20px 30px;
+
+		.ansvers {
+			padding: 20px;
+			border: 5px solid $light-orange;
+			border-radius: 15px;
+			width: 300px;
+			box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.15);
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 22px;
+			text-align: center;
+		}
+
+		.image {
+			grid-area: image;
+
+			img {
+				width: 400px;
+			}
+		}
+
+		.a1 {
+			grid-area: a1;
+			position: relative;
+			right: -40px;
+		}
+
+		.a2 {
+			grid-area: a2;
+			position: relative;
+			right: 0px;
+		}
+
+		.a3 {
+			grid-area: a3;
+			position: relative;
+			right: 0px;
+		}
+
+		.a4 {
+			grid-area: a4;
+			position: relative;
+			right: -40px;
+		}
+
+		.a5 {
+			grid-area: a5;
+			position: relative;
+			left: -20px;
+			top: -90px;
+		}
+
+		.a6 {
+			grid-area: a6;
+			position: relative;
+			left: 20px;
+			top: -75px;
+		}
+
+		.a7 {
+			grid-area: a7;
+			position: relative;
+			left: -20px;
+			top: -60px;
+		}
+	}
+
+	@media (max-width: 1170px) {
+		.about_wrap {
+			margin-top: 80px;
+			position: relative;
+			display: grid;
+			grid-template-columns: auto 400px;
+			grid-template-rows: repeat(5, auto);
+			align-items: center;
+			justify-items: center;
+			justify-content: center;
+			grid-template-areas:
+				'a2 a1'
+				'a3 image'
+				'a4 image'
+				'a5 image'
+				'a6 a7';
+			gap: 20px;
+
+			.ansvers {
+				padding: 20px;
+				border: 5px solid $light-orange;
+				border-radius: 15px;
+				width: 300px;
+				box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.15);
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 22px;
+				text-align: center;
+			}
+
+			.image {
+				grid-area: image;
+
+				img {
+					width: 400px;
+				}
+			}
+
+			.a1 {
+				grid-area: a1;
+				position: relative;
+				right: -30px;
+				top: -20px;
+			}
+
+			.a2 {
+				grid-area: a2;
+				position: relative;
+				right: -60px;
+				top: 10px;
+			}
+
+			.a3 {
+				grid-area: a3;
+				position: relative;
+				right: -30px;
+			}
+
+			.a4 {
+				grid-area: a4;
+				position: relative;
+				right: 0px;
+				top: -20px;
+			}
+
+			.a5 {
+				grid-area: a5;
+				position: relative;
+				left: auto;
+				right: 0px;
+				top: -40px;
+			}
+
+			.a6 {
+				grid-area: a6;
+				position: relative;
+				left: auto;
+				right: -50px;
+				top: -40px;
+			}
+
+			.a7 {
+				grid-area: a7;
+				position: relative;
+				left: auto;
+				right: -30px;
+				top: -10px;
+			}
+		}
+	}
+
+	@media (max-width: 760px) {
+		& {
+			padding: 40px 40px;
+		}
+
+		.about_wrap {
+			margin-top: 40px;
+			position: relative;
+			display: grid;
+			grid-template-columns: auto;
+			grid-template-rows: repeat(8, auto);
+			align-items: center;
+			justify-items: center;
+			justify-content: stretch;
+			grid-template-areas:
+				'image'
+				'a1'
+				'a2'
+				'a3'
+				'a4'
+				'a5'
+				'a6'
+				'a7';
+			gap: 20px;
+
+			.ansvers {
+				padding: 20px;
+				border: 0px solid $light-orange;
+				border-radius: 15px;
+				max-width: 300px;
+				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+				font-weight: 600;
+				font-size: 14px;
+				line-height: 20px;
+				text-align: center;
+			}
+
+			.image {
+				position: relative;
+				img {
+					width: 300px;
+				}
+			}
+
+			.a1 {
+				grid-area: a1;
+				position: relative;
+				right: 0px;
+				top: 0px;
+				background: $light-orange;
+				justify-self: start;
+			}
+
+			.a2 {
+				grid-area: a2;
+				position: relative;
+				right: 0;
+				top: 0;
+				background: $light-blue;
+				justify-self: end;
+			}
+
+			.a3 {
+				grid-area: a3;
+				position: relative;
+				right: 0;
+				background: $light-orange;
+				justify-self: start;
+			}
+
+			.a4 {
+				grid-area: a4;
+				position: relative;
+				right: -0;
+				top: 0;
+				background: $light-blue;
+				justify-self: end;
+			}
+
+			.a5 {
+				grid-area: a5;
+				position: relative;
+				left: 0;
+				right: 0;
+				top: 0;
+				background: $light-orange;
+				justify-self: start;
+			}
+
+			.a6 {
+				grid-area: a6;
+				position: relative;
+				left: 0;
+				right: -0;
+				top: 0;
+				background: $light-blue;
+				justify-self: end;
+			}
+
+			.a7 {
+				grid-area: a7;
+				position: relative;
+				left: 0;
+				right: 0;
+				top: 0;
+				background: $light-orange;
+				justify-self: start;
+			}
+		}
+	}
+
+	@media (max-width: 400px) {
+		& {
+			padding: 40px 10px;
+		}
+	}
+}

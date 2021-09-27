@@ -3,284 +3,73 @@
 
 .header {
 	position: relative;
-	width: 100%;
-	height: 700px;
+	//max-width: 1170px;
+	height: 600px;
+	margin: 20px 20px 20px 20px;
+	border-radius: 20px;
 
-	background: linear-gradient(129.34deg, #1355ff 20.09%, #ffffff 175.17%);
+	-webkit-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.4);
+	-moz-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.4);
+	box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.4);
 
-	.contanier {
-		max-width: 1170px;
-		margin: 0 auto;
-		padding: 0 30px;
-	}
+	background: #0052d4; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#0052d4,
+		#4364f7,
+		#6fb1fc
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#0052d4,
+		#4364f7,
+		#6fb1fc
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	// логотип и навигация в Header ----------------------------------------------------------
-	.top_block {
-		border-bottom: 1px solid $light-blue;
+	.quick_links {
+		display: flex;
 
-		.header_top {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+		margin-top: 7px;
 
-			height: 100px;
-			padding-top: 30px;
+		a {
+			text-decoration: none;
 
-			.logo_wrap {
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
+			color: $light-blue;
 
-				.logo {
-					position: relative;
-					top: -3px;
+			font-size: 12px;
 
-					text-decoration: none;
-
-					color: $white;
-
-					font-family: 'Roboto Slab', serif;
-					font-size: 26px;
-					font-weight: 300;
-					font-style: normal;
-				}
-
-				.vertical_line {
-					width: 0;
-					height: 40px;
-					margin: 0 15px;
-
-					border-right: 1px solid $light-blue;
-				}
-			}
-
-			.navi_wrap {
-				display: flex;
-				justify-content: flex-end;
-
-				.navi {
-					display: flex;
-					align-items: center;
-					justify-content: flex-end;
-					gap: 5px;
-				}
-
-				.navi_link {
-					display: inline-block;
-
-					padding: 8px;
-
-					text-decoration: none;
-
-					color: $white;
-
-					font-size: 14px;
-					font-weight: 300;
-
-					&:hover,
-					&:active {
-						text-decoration: none;
-
-						color: $orange;
-					}
-				}
-			}
-		}
-	}
-
-	// Основной контeнт Header ----------------------------------------------------------
-	.header_contents {
-		position: relative;
-
-		color: $white;
-
-		.quick_links {
-			display: flex;
-
-			margin-top: 5px;
-
-			a {
+			&:hover,
+			&:active {
+				transition: all 0.9s linear 0s;
 				text-decoration: none;
 
-				color: $light-blue;
-
-				font-size: 12px;
-
-				&:hover,
-				&:active {
-					transition: all 0.9s linear 0s;
-					text-decoration: none;
-
-					color: $white;
-				}
-			}
-
-			.vertical_line {
-				width: 0;
-				height: 15px;
-				margin: 0 10px;
-
-				border-right: 1px solid $light-blue;
-			}
-
-			@media (max-width: 635px) {
-				& a,
-				& .vertical_line {
-					display: none;
-				}
+				color: $white;
 			}
 		}
 
-		.title {
-			margin-top: 100px;
-			margin-bottom: 50px;
-			margin-left: 0px;
+		.vertical_line {
+			width: 0;
+			height: 15px;
+			margin: 0 13px;
+
+			border-right: 1px solid $light-blue;
 		}
 
-		.list {
-			max-width: 600px;
-			margin-left: 50px;
-
-			color: $light-grey;
-		}
-
-		.button {
-			position: absolute;
-			margin-top: 90px;
-			margin-left: 100px;
-		}
-
-		p {
-			position: absolute;
-			top: 340px;
-			left: 750px;
-
-			max-width: 230px;
-
-			transform: rotate(-16deg);
-
-			font-family: 'Bad Script', cursive;
-			font-size: 26px;
-		}
-	}
-
-	@media (max-width: 1440px) {
-		& {
-			height: 600px;
-
-			.header_contents {
-				.title {
-					margin-top: 80px;
-					margin-bottom: 40px;
-					margin-left: 0px;
-				}
-
-				.list {
-					max-width: 600px;
-					margin-left: 50px;
-
-					color: $light-grey;
-				}
-
-				.button {
-					position: absolute;
-					margin-top: 50px;
-					margin-left: 100px;
-				}
-
-				p {
-					position: absolute;
-					top: 250px;
-					left: 750px;
-
-					max-width: 230px;
-
-					transform: rotate(-16deg);
-
-					font-family: 'Bad Script', cursive;
-					font-size: 26px;
-				}
-			}
-		}
-	}
-
-	@media (max-width: 900px) {
-		& {
-			height: 600px;
-
-			.header_top .navi_wrap .navi .navi_link {
+		@media (max-width: 760px) {
+			& a,
+			& .vertical_line {
 				display: none;
 			}
-
-			.header_contents {
-				.title {
-					margin-top: 60px;
-					margin-bottom: 60px;
-					margin-left: 0px;
-
-					h1 {
-						font-size: 32px;
-					}
-				}
-
-				.list {
-					max-width: 600px;
-					margin-left: 50px;
-
-					color: $light-grey;
-
-					li {
-						font-size: 14px;
-					}
-				}
-
-				.button {
-					position: absolute;
-					margin-top: 60px;
-					margin-left: 100px;
-				}
-
-				p {
-					display: none;
-				}
-			}
 		}
 	}
 
-	@media (max-width: 600px) {
-		& {
-			.header_contents {
-				.title {
-					margin-top: 50px;
-					margin-bottom: 50px;
-					margin-left: 0px;
+	img {
+		position: absolute;
+		right: 0;
+		bottom: -600px; //z-index: -1;
+	}
 
-					h1 {
-						font-size: 28px;
-					}
-				}
-
-				.list {
-					max-width: 600px;
-					margin-left: 25px;
-
-					color: $light-grey;
-
-					li {
-						font-size: 12px;
-					}
-				}
-
-				.button {
-					position: absolute;
-					margin-top: 50px;
-					margin-left: 0;
-				}
-
-				p {
-					display: none;
-				}
-			}
-		}
+	@media (max-width: 500px) {
+		margin: 10px 10px 10px 10px;
 	}
 }

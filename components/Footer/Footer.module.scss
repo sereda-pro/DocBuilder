@@ -3,143 +3,248 @@
 
 .footer {
 	position: relative;
-	width: 100%;
-	height: 300px;
+	height: 220px;
+	margin: 20px 20px 20px 20px;
+	border-radius: 20px;
 
-	background: linear-gradient(129.34deg, #1355ff 20.09%, #ffffff 175.17%);
+	-webkit-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.4);
+	-moz-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.4);
+	box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.4);
+
+	background: #0052d4; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#0052d4,
+		#4364f7,
+		#6fb1fc
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#0052d4,
+		#4364f7,
+		#6fb1fc
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 	color: $white;
 
-	.container {
-		padding: 0px 30px 0;
-		max-width: 1170px;
-		margin: 0 auto;
+	@media (max-width: 510px) {
+		& {
+			height: 300px;
+		}
+	}
 
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		grid-template-rows: 130px 60px 30px 30px;
-		align-items: center;
-		justify-content: center;
-		grid-template-areas:
-			'logo contacts'
-			'company .'
-			'doc .'
-			'law .';
+	@media (max-width: 500px) {
+		margin: 10px 10px 10px 10px;
+	}
+}
 
-		.logo {
-			grid-area: logo;
+.cont {
+	height: 100%;
+}
+
+.footer_wrap {
+	height: 100%;
+
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: 50px auto auto 30px auto;
+	justify-content: space-between;
+	align-content: center;
+	grid-template-areas:
+		'logo logo contacts contacts'
+		'company company contacts contacts'
+		'doc doc contacts contacts'
+		'. . contacts contacts'
+		'law law law law';
+
+	.logo {
+		grid-area: logo;
+		text-decoration: none;
+
+		color: $white;
+
+		font-family: 'Roboto Slab', serif;
+		font-size: 24px;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	.contacts {
+		grid-area: contacts;
+		text-align: end;
+
+		a {
 			text-decoration: none;
-
 			color: $white;
-
-			font-family: 'Roboto Slab', serif;
-			font-size: 26px;
-			font-weight: 400;
-			font-style: normal;
-		}
-
-		.contacts {
-			grid-area: contacts;
-
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			gap: 20px;
-
-			a {
-				text-decoration: none;
-				color: $white;
-
-				&:hover,
-				&:active {
-					transition: all 0.9s linear 0s;
-					text-decoration: underline;
-				}
-			}
-
-			.mail span {
-				position: relative;
-				top: 3px;
-			}
-
-			.tel span {
-				position: relative;
-				top: 5px;
-			}
-		}
-
-		.button {
-			grid-area: button;
-		}
-
-		.doc,
-		a.doc {
-			grid-area: doc;
-			font-size: 14px;
-
-			color: $light-grey;
+			display: block;
+			padding-bottom: 10px;
 
 			&:hover,
 			&:active {
 				transition: all 0.9s linear 0s;
-				color: $white;
+				text-decoration: underline;
 			}
 		}
 
-		.name_company {
-			grid-area: company;
+		.mail {
 			font-size: 14px;
-		}
-
-		.law {
-			grid-area: law;
-			position: relative;
-			font-size: 12px;
-			color: $light-grey;
-
-			.right_reserved {
+			span {
+				position: relative;
+				top: 2px;
+				padding-right: 5px;
 			}
 		}
 
-		.point {
-			position: absolute;
-			bottom: 120px;
-			right: 200px;
+		.tel {
+			font-size: 22px;
+			font-weight: 600;
+			span {
+				position: relative;
+				top: 2px;
+				padding-right: 3px;
+			}
 		}
 
-		@media (max-width: 925px) {
-			padding: 230px 30px 0;
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: 50px 130px 30px 30px 30px;
+		p {
+			color: $light-grey;
+			font-size: 14px;
+			line-height: 15px;
+		}
+	}
+
+	.company {
+		grid-area: company;
+		font-size: 14px;
+	}
+
+	.doc {
+		grid-area: doc;
+		font-size: 14px;
+
+		color: $light-grey;
+
+		&:hover,
+		&:active {
+			transition: all 0.9s linear 0s;
+			color: $white;
+		}
+	}
+
+	.right {
+		grid-area: law;
+		position: relative;
+		font-size: 12px;
+		color: $light-grey;
+		border-top: 1px solid $light-blue;
+		text-align: center;
+		padding-top: 10px;
+		color: $light-blue;
+	}
+
+	@media (max-width: 600px) {
+		& {
+			.logo {
+				font-size: 22px;
+			}
+
+			.contacts {
+				.mail {
+					font-size: 14px;
+				}
+
+				.tel {
+					font-size: 19px;
+				}
+
+				p {
+					font-size: 12px;
+					line-height: 15px;
+				}
+			}
+
+			.company {
+				font-size: 12px;
+			}
+
+			.doc {
+				font-size: 12px;
+			}
+
+			.right {
+				grid-area: law;
+				position: relative;
+				font-size: 10px;
+				color: $light-grey;
+
+				.right_reserved {
+				}
+			}
+		}
+	}
+
+	@media (max-width: 510px) {
+		& {
+			grid-template-columns: auto;
+			//grid-template-rows: auto;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
 			grid-template-areas:
 				'logo'
 				'contacts'
-				'doc'
 				'company'
+				'doc'
 				'law';
 
-			.contacts {
-				//margin: 0 0;
-				justify-content: flex-start;
-			}
-		}
-
-		@media (max-width: 640px) {
-			padding: 230px 30px 0;
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: 40px 150px 40px 40px 40px;
-
 			.logo {
+				grid-area: logo;
+				font-size: 22px;
 				text-align: center;
 			}
 
 			.contacts {
-				display: flex;
-				align-items: center;
-				flex-direction: column;
-				margin: 0 20px;
+				grid-area: contacts;
+				text-align: center;
+
+				a {
+					display: block;
+					padding-bottom: 10px;
+				}
+
+				.mail {
+					font-size: 18px;
+				}
+
+				.tel {
+					font-size: 18px;
+					font-weight: 400;
+				}
+
+				p {
+					font-size: 12px;
+				}
+			}
+
+			.company {
+				grid-area: company;
+				font-size: 12px;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				text-align: center;
+			}
+
+			.doc {
+				grid-area: doc;
+				font-size: 12px;
+
+				padding-bottom: 10px;
+				text-align: center;
+			}
+
+			.right {
+				grid-area: law;
+				font-size: 12px;
+				text-align: center;
 			}
 		}
 	}

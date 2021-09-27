@@ -1,114 +1,35 @@
-import { HeaderProps, Navi, LinkProps } from './Header.props';
+import { HeaderProps} from './Header.props';
 import styles from './Header.module.scss';
-import Menu from './Menu.svg';
-import IconLK from './Icon_lk.svg';
-import { Button } from '../UI';
-import cn from 'classnames';
-import { Modal } from '../UI';
-import { useEffect, useState } from 'react';
-import { FormContactUs } from '../FormContactUs/FormContactUs';
-import { Htag } from '../UI';
+import { HeaderNav } from '../HeaderNav/HeaderNav';
+import { Container } from '../UI';
+import { HeaderContent } from '../HeaderContent/HeaderContent';
 
 
 export function Header( {navi, children, ...props}: HeaderProps): JSX.Element {
-
-	const [modalActive, setModalActive] = useState<boolean>(false);
-	const [anchor, setAnchor] = useState<string>();
-
-	useEffect(() => {
-		const element = document.getElementById(anchor);
-		if (element != null) {
-				window.scroll({
-				left: 0,
-				top: element.offsetTop + 30,
-				behavior: 'smooth'
-			});
-		}
-	}, [anchor]);
-
-	const handlerOnClickAnchor = (e, anchor: string) => {
-		e.preventDefault();
-		setAnchor(anchor);
-	};
-
-	const navigation = navi && navi.map((item: Navi, i: number) => {
-		return (
-			<a 
-				href={item.link} 
-				className={styles.navi_link} 
-				key={i}
-				onClick = {(e) => handlerOnClickAnchor(e, item.anchor)}
-			>
-				{item.title}
-			</a>
-		);
-	});
 	
 	return (
-		<>
-			<header id='home' className={styles.header}>
-				<div className={styles.top_block}>
-					<div className={styles.contanier}>
-					
-						<div className={styles.header_top}>
-							<div className={styles.logo_wrap}>
-								<a href="#" className={styles.logo}>The law society</a>
-								<div className={styles.vertical_line}></div>
-								<Menu />
-							</div>
-							<div className={styles.navi_wrap}>
-								<nav className={styles.navi}>
-									{navigation}
-								</nav>
-								<IconLK style={{
-									width: '35px',
-									height: '35px',
-									marginLeft: '30px'
-								}}/>
-							</div>
-						</div>
-					</div>
+		<header className={styles.header}>
+
+			<Container>
+				<img src="IndexPage/bacground.png" alt="background" />
+			</Container>
+			
+			<HeaderNav navi={navi} />
+
+			<Container>
+				<div className={styles.quick_links}>
+					<a href="#">Юридические консультации</a>
+					<div className={styles.vertical_line}></div>
+					<a href="#">Судебные споры</a>
+					<div className={styles.vertical_line}></div>
+					<a href="#">Документы</a>
+					<div className={styles.vertical_line}></div>
+					<a href="#">Консалтинг закупок (44-ФЗ/223-ФЗ)</a>
 				</div>
+			</Container>
 
-				<div className={cn(styles.contanier, styles.header_contents)}>
-					<div className={styles.quick_links}>
-						<a href="#">Юридические консультации</a>
-						<div className={styles.vertical_line}></div>
-						<a href="#">Судебные споры</a>
-						<div className={styles.vertical_line}></div>
-						<a href="#">Документы</a>
-						<div className={styles.vertical_line}></div>
-						<a href="#">Закупки (44-ФЗ/223-ФЗ)</a>
-					</div>
-					<div className={styles.title}>
-						<Htag tag='h1'>Юридическая безопасность<br/>вашего бизнеса</Htag>
-					</div>
-					<ul className={styles.list}>
-						<li>Более 10 лет в отрасли</li>
-						<li>Положительный опыт решения административных вопросов и судебных дел</li>
-						<li>Дистанционно сопровождаем бизнес из любого региона</li>
-					</ul>
-					<div className={styles.button}>
-						<Button 
-							appearence='primary' 
-							icon={true} 
-							onClick={() => setModalActive(true)}
-						>
-							Получить консультацию
-						</Button>		
-						
-						<Modal
-							modalActive={modalActive}
-							setModalActive={setModalActive}
-						>
-							<FormContactUs />
-						</Modal>
+			<HeaderContent />
 
-
-					</div>				
-					<p>В двое дешевле штатного юриста.</p>
-				</div>
-			</header>
-		</>
+		</header>
 	);
 }

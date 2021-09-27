@@ -1,0 +1,309 @@
+@import '../../styles/colors';
+
+.mainServices {
+	padding: 100px 30px;
+	position: relative;
+	overflow: hidden;
+
+	.img_services {
+		height: 600px;
+		position: absolute;
+		left: -150px;
+		top: 150px;
+
+		img {
+			object-fit: cover;
+		}
+	}
+
+	.services {
+		.htag {
+			font-weight: 600;
+
+			mark {
+				background-color: $light-blue;
+				border-radius: 2px;
+				padding: 0 3px;
+			}
+		}
+
+		.services_wrap {
+			margin-top: 80px;
+			position: relative;
+			display: grid;
+			grid-template-columns: 180px 180px 180px 1fr;
+			grid-template-rows: 180px 180px 180px 180px;
+			grid-template-areas:
+				's1 s5 . .'
+				's3 s6 s9 .'
+				's2 s7 description description'
+				's4 s8 description description';
+			gap: 20px 20px;
+
+			.service {
+				position: relative;
+				border-radius: 15px;
+				color: $dark-grey;
+				height: 180px;
+				width: 180px;
+				padding: 10px;
+				text-align: left;
+				transition: all 0.4s ease;
+
+				&:hover {
+					-webkit-box-shadow: 10px 10px 20px 0px
+						rgba(50, 50, 50, 0.55);
+					-moz-box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
+					box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
+					color: $black;
+				}
+
+				&:active {
+					background: $light-grey;
+
+					p {
+						color: white;
+					}
+				}
+
+				p {
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					font-size: 20px;
+					color: $light-grey;
+					font-weight: 600;
+				}
+
+				.htag {
+					position: absolute;
+					padding-right: 20px;
+					bottom: 20px;
+					left: 10px;
+				}
+			}
+
+			.s1 {
+				grid-area: s1;
+				background: white;
+				border: 1px solid $light-blue;
+			}
+
+			.s2 {
+				grid-area: s2;
+				background: $light-blue;
+				color: white;
+
+				p {
+					color: white;
+				}
+
+				&:hover {
+					color: white;
+				}
+			}
+
+			.s3 {
+				grid-area: s3;
+				background: white;
+				border: 1px solid $light-blue;
+			}
+
+			.s4 {
+				grid-area: s4;
+				background: white;
+				border: 1px solid $light-blue;
+			}
+
+			.s5 {
+				grid-area: s5;
+				background: $orange;
+				color: white;
+				position: relative;
+				top: 60px;
+
+				p {
+					color: white;
+				}
+			}
+
+			.s6 {
+				grid-area: s6;
+				border: 1px solid $light-blue;
+				position: relative;
+				top: 60px;
+			}
+
+			.s7 {
+				grid-area: s7;
+				position: relative;
+				border: 1px solid $light-blue;
+				top: 60px;
+			}
+
+			.s8 {
+				grid-area: s8;
+				background: $light-orange;
+				color: $orange;
+				position: relative;
+				top: 60px;
+			}
+
+			.s9 {
+				grid-area: s9;
+				border: 1px solid $light-blue;
+				position: relative;
+				top: -60px;
+			}
+
+			.description {
+				grid-area: description;
+				padding-left: 60px;
+
+				ul {
+					padding-top: 20px;
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 900px) {
+		.services {
+			.services_wrap {
+				margin-top: 40px;
+				position: relative;
+				display: grid;
+				grid-template-columns: 180px 180px 180px;
+				grid-template-rows: 90px 90px 90px auto;
+				grid-template-areas:
+					's2 s4 s7'
+					's1 s5 s9'
+					's3 s6 s8'
+					'description description description';
+				gap: 20px 20px;
+
+				.service {
+					position: relative;
+					border-radius: 15px;
+					color: $dark-grey;
+					height: 90px;
+					width: 160px;
+					padding: 10px;
+					text-align: left;
+					transition: all 0.4s ease;
+
+					&:hover {
+						-webkit-box-shadow: 10px 10px 20px 0px
+							rgba(50, 50, 50, 0.55);
+						-moz-box-shadow: 10px 10px 20px 0px
+							rgba(50, 50, 50, 0.55);
+						box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
+						color: $black;
+					}
+
+					&:active {
+						background: $light-grey;
+
+						p {
+							color: white;
+						}
+					}
+
+					p {
+						display: none;
+					}
+
+					.htag {
+						position: relative;
+						bottom: auto;
+						font-weight: 400;
+						font-size: 14px;
+					}
+				}
+
+				.s1 {
+					grid-area: s1;
+					background: white;
+					border: 1px solid $light-blue;
+				}
+
+				.s2 {
+					grid-area: s2;
+					background: $light-blue;
+					color: white;
+
+					p {
+						color: white;
+					}
+
+					&:hover {
+						color: white;
+					}
+				}
+
+				.s3 {
+					grid-area: s3;
+					background: white;
+					border: 1px solid $light-blue;
+				}
+
+				.s4 {
+					grid-area: s4;
+					background: white;
+					border: 1px solid $light-blue;
+				}
+
+				.s5 {
+					grid-area: s5;
+					background: $orange;
+					color: white;
+					position: relative;
+					top: 0px;
+
+					p {
+						color: white;
+					}
+				}
+
+				.s6 {
+					grid-area: s6;
+					border: 1px solid $light-blue;
+					position: relative;
+					top: 0px;
+				}
+
+				.s7 {
+					grid-area: s7;
+					position: relative;
+					border: 1px solid $light-blue;
+					top: 0px;
+				}
+
+				.s8 {
+					grid-area: s8;
+					background: $light-orange;
+					color: $orange;
+					position: relative;
+					top: 00px;
+				}
+
+				.s9 {
+					grid-area: s9;
+					border: 1px solid $light-blue;
+					position: relative;
+					top: 0px;
+				}
+
+				.description {
+					grid-area: description;
+					padding-left: 0px;
+
+					p {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}

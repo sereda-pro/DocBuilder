@@ -1,0 +1,62 @@
+@import '../../styles/colors';
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+.content_wrap {
+	height: 500px;
+
+	.title {
+		padding-top: 80px;
+		margin-bottom: 50px;
+		color: white;
+
+		@media (max-width: 760px) {
+			& {
+				margin-top: 0;
+				padding-top: 40px;
+			}
+		}
+	}
+
+	.list {
+		max-width: 500px;
+		margin-left: 70px;
+		margin-bottom: 50px;
+		color: $light-blue;
+
+		@media (max-width: 760px) {
+			& {
+				font-size: 14px;
+				margin-left: 20px;
+			}
+		}
+	}
+
+	.button {
+		margin-left: 140px;
+		@media (max-width: 760px) {
+			& {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.disclaimer {
+		position: absolute;
+		top: 290px;
+		right: 20px;
+
+		max-width: 230px;
+
+		transform: rotate(-16deg);
+
+		font-family: 'Bad Script', cursive;
+		font-size: 26px;
+		color: white;
+
+		@media (max-width: 750px) {
+			& {
+				display: none;
+			}
+		}
+	}
+}
