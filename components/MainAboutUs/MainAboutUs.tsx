@@ -5,12 +5,14 @@ import React, { useEffect } from 'react';
 import { Container } from '../UI';
 import { Htag } from '../UI';
 
-export function MainAboutUs( {children, ...props}: MainAboutUsProps): JSX.Element {
+export function MainAboutUs( {id, children, ...props}: MainAboutUsProps): JSX.Element {
 	
 	return (
-		<Container className={styles.about}>
+		<Container className={styles.container} id={id}>
+
 			<Htag tag='h2' className={styles.htag}>Юридическое общество - это не только <mark>команда профессиональных юристов</mark>,<br />
 			это <mark>юридический сервис</mark> нового поколения.</Htag>
+
 			<div className={styles.about_wrap}>
 				<div className={styles.image}>
 					<img src="IndexPage/Consultation.png" alt="Коротко о компании..." />
@@ -37,7 +39,6 @@ export function MainAboutUs( {children, ...props}: MainAboutUsProps): JSX.Elemen
 					<p>А самое главное мы вегда на связи! &#128512; &#128512; &#128512; &#128077; &#128077; &#128077;</p>
 				</div>
 			</div>
-			
 
 		</Container>
 	);

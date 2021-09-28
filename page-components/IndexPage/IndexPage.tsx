@@ -10,10 +10,10 @@ import React, { useEffect } from 'react';
 export const IndexPageComponent = (): JSX.Element => { 
 
 	const navi = [
-		{title: 'Решения', link: '#', anchor: 'cooperation'},
-		{title: 'Услуги', link: '#', anchor: 'services'},
-		{title: 'Экспертиза', link: '#', anchor: 'expertise'},
 		{title: 'О компании', link: '#', anchor: 'about'},
+		{title: 'Услуги', link: '#', anchor: 'services'},
+		{title: 'Сотрудничество', link: '#', anchor: 'cooperation'},
+		{title: 'Новости', link: '#', anchor: 'news'},
 	];
 
 	return (

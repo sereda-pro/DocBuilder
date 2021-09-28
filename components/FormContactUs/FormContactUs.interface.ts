@@ -4,6 +4,7 @@ export interface IFormContactUS {
 	tel: string;
 	email: string;
 	message: string;
+	datetime: number;
 }
 
 export interface ISendFormContactUs {

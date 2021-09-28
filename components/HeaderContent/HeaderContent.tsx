@@ -17,7 +17,7 @@ export function HeaderContent( {children, ...props}: HeaderContentProps): JSX.El
 		<Container>
 			<div className={styles.content_wrap}>
 				<div className={styles.title}>
-					<Htag tag='h1'>Комплексное юридическое сопровождение<br/>вашего бизнеса</Htag>
+					<Htag tag='h1' className={styles.htag}>Комплексное юридическое сопровождение<br/>вашего бизнеса</Htag>
 				</div>
 				<ul className={styles.list}>
 					<li>Более 10 лет в отрасли</li>

@@ -6,7 +6,7 @@ import { Container } from '../UI';
 import { Htag } from '../UI';
 import { listServices, IListServices } from './services';
 
-export function MainServices( {children, ...props}: MainServicesProps): JSX.Element {
+export function MainServices( {id, children, ...props}: MainServicesProps): JSX.Element {
 
 
 	const [description, setDescription] = useState(listServices[4]);
@@ -60,7 +60,7 @@ export function MainServices( {children, ...props}: MainServicesProps): JSX.Elem
 
 	
 	
-	const handleClick = (e) => {
+	const handleClick = (e: any) => {
 		switch (e.currentTarget.dataset.name) {
 			case listServices[0].title: 
 				setDescription(listServices[0]);
@@ -95,25 +95,28 @@ export function MainServices( {children, ...props}: MainServicesProps): JSX.Elem
 	
 	return (
 
-		<div className={styles.mainServices}>
-			<div className={styles.img_services}>
-				<img src="IndexPage/img-services.png" alt="services" />
+		<Container className={styles.container} id={id}>
+
+			{/* <div className={styles.mainServices}> */}
+				{/* <div className={styles.img_services}> */}
+			<img src="IndexPage/img-services.png" alt="services" />
+				{/* </div> */}
+				{/* <Container className={styles.services}> */}
+			<Htag tag='h2' className={styles.htag}>
+				Мы готовы взять на себя все правовые вопросы 
+				вашей компании,<br /> а вам останется <mark>спокойно развивать свой бизнес</mark>,<br />
+				и не отвлекаться на рутину.
+			</Htag>
+
+			<div className={styles.services_wrap}>
+
+				{service}
+
+				{serviceDescription(description)}
+
 			</div>
-			<Container className={styles.services}>
-				<Htag tag='h2' className={styles.htag}>
-					Мы готовы взять на себя все правовые вопросы 
-					вашей компании,<br /> а вам останется <mark>спокойно развивать свой бизнес</mark>,<br />
-					и не отвлекаться на рутину.
-				</Htag>
-
-				<div className={styles.services_wrap}>
-
-					{service}
-
-					{serviceDescription(description)}
-
-				</div>
-			</Container>
-		</div>
+				{/* </Container> */}
+			{/* </div> */}
+		</Container>
 	);
 }

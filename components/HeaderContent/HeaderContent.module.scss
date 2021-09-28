@@ -4,16 +4,15 @@
 .content_wrap {
 	height: 500px;
 
-	.title {
+	.htag {
 		padding-top: 80px;
 		margin-bottom: 50px;
 		color: white;
 
 		@media (max-width: 760px) {
-			& {
-				margin-top: 0;
-				padding-top: 40px;
-			}
+			margin-top: 0;
+			padding-top: 40px;
+			font-size: 30px;
 		}
 	}
 
@@ -24,15 +23,14 @@
 		color: $light-blue;
 
 		@media (max-width: 760px) {
-			& {
-				font-size: 14px;
-				margin-left: 20px;
-			}
+			font-size: 14px;
+			margin-left: 20px;
 		}
 	}
 
 	.button {
 		margin-left: 140px;
+
 		@media (max-width: 760px) {
 			& {
 				margin-left: 0;

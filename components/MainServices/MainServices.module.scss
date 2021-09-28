@@ -1,309 +1,214 @@
 @import '../../styles/colors';
 
-.mainServices {
-	padding: 100px 30px;
+.container {
+	padding-top: 100px;
 	position: relative;
-	overflow: hidden;
 
-	.img_services {
-		height: 600px;
+	img {
+		width: 90%;
+		object-fit: cover;
 		position: absolute;
-		left: -150px;
 		top: 150px;
+	}
 
-		img {
-			object-fit: cover;
+	> .htag {
+		font-weight: 600;
+		text-align: center;
+
+		mark {
+			background-color: $light-blue;
+			border-radius: 2px;
+			padding: 0 3px;
 		}
 	}
 
-	.services {
-		.htag {
-			font-weight: 600;
+	.services_wrap {
+		margin-top: 80px;
+		position: relative;
+		display: grid;
+		grid-template-columns: 180px 180px 180px 1fr;
+		grid-template-rows: 180px 180px 180px 180px;
+		grid-template-areas:
+			's1 s5 . .'
+			's3 s6 s9 .'
+			's2 s7 description description'
+			's4 s8 description description';
+		gap: 20px 20px;
 
-			mark {
-				background-color: $light-blue;
-				border-radius: 2px;
-				padding: 0 3px;
-			}
-		}
-
-		.services_wrap {
-			margin-top: 80px;
-			position: relative;
-			display: grid;
-			grid-template-columns: 180px 180px 180px 1fr;
-			grid-template-rows: 180px 180px 180px 180px;
+		@media (max-width: 1000px) {
+			grid-template-columns: 180px 180px auto;
+			grid-template-rows: 180px 180px 180px 180px 180px 180px;
 			grid-template-areas:
-				's1 s5 . .'
-				's3 s6 s9 .'
-				's2 s7 description description'
-				's4 s8 description description';
+				's1 s2 description'
+				's3 s4 description'
+				's5 s6 description'
+				's7 s8 description'
+				'. s9 description';
 			gap: 20px 20px;
+		}
 
-			.service {
-				position: relative;
-				border-radius: 15px;
-				color: $dark-grey;
-				height: 180px;
-				width: 180px;
-				padding: 10px;
-				text-align: left;
-				transition: all 0.4s ease;
+		@media (max-width: 750px) {
+			grid-template-columns: 180px 180px;
+			grid-template-rows: auto;
+			grid-template-areas: auto;
+			gap: 10px 10px;
+		}
 
-				&:hover {
-					-webkit-box-shadow: 10px 10px 20px 0px
-						rgba(50, 50, 50, 0.55);
-					-moz-box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
-					box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
-					color: $black;
-				}
+		.service {
+			position: relative;
 
-				&:active {
-					background: $light-grey;
+			border-radius: 15px;
+			color: $dark-grey;
+			height: 180px;
+			width: 180px;
+			padding: 10px;
+			text-align: left;
+			transition: all 0.4s ease;
 
-					p {
-						color: white;
-					}
-				}
-
-				p {
-					position: absolute;
-					top: 10px;
-					right: 10px;
-					font-size: 20px;
-					color: $light-grey;
-					font-weight: 600;
-				}
-
-				.htag {
-					position: absolute;
-					padding-right: 20px;
-					bottom: 20px;
-					left: 10px;
-				}
+			&:hover {
+				-webkit-box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
+				-moz-box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
+				box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
+				color: $black;
 			}
 
-			.s1 {
-				grid-area: s1;
-				background: white;
-				border: 1px solid $light-blue;
-			}
-
-			.s2 {
-				grid-area: s2;
-				background: $light-blue;
-				color: white;
-
-				p {
-					color: white;
-				}
-
-				&:hover {
-					color: white;
-				}
-			}
-
-			.s3 {
-				grid-area: s3;
-				background: white;
-				border: 1px solid $light-blue;
-			}
-
-			.s4 {
-				grid-area: s4;
-				background: white;
-				border: 1px solid $light-blue;
-			}
-
-			.s5 {
-				grid-area: s5;
-				background: $orange;
-				color: white;
-				position: relative;
-				top: 60px;
+			&:active {
+				background: $light-grey;
 
 				p {
 					color: white;
 				}
 			}
 
-			.s6 {
-				grid-area: s6;
-				border: 1px solid $light-blue;
-				position: relative;
-				top: 60px;
+			p {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				font-size: 14px;
+				color: $light-grey;
+				font-weight: 500;
 			}
 
-			.s7 {
-				grid-area: s7;
-				position: relative;
-				border: 1px solid $light-blue;
-				top: 60px;
-			}
-
-			.s8 {
-				grid-area: s8;
-				background: $light-orange;
-				color: $orange;
-				position: relative;
-				top: 60px;
-			}
-
-			.s9 {
-				grid-area: s9;
-				border: 1px solid $light-blue;
-				position: relative;
-				top: -60px;
-			}
-
-			.description {
-				grid-area: description;
-				padding-left: 60px;
-
-				ul {
-					padding-top: 20px;
-					padding-left: 20px;
-				}
+			.htag {
+				position: absolute;
+				bottom: 10px;
+				padding: 0 10px 0 0;
+				font-weight: 600;
+				font-size: 14px;
 			}
 		}
-	}
 
-	@media (max-width: 900px) {
-		.services {
-			.services_wrap {
-				margin-top: 40px;
-				position: relative;
-				display: grid;
-				grid-template-columns: 180px 180px 180px;
-				grid-template-rows: 90px 90px 90px auto;
-				grid-template-areas:
-					's2 s4 s7'
-					's1 s5 s9'
-					's3 s6 s8'
-					'description description description';
-				gap: 20px 20px;
+		.s1 {
+			grid-area: s1;
+			background: white;
+			border: 1px solid $light-blue;
+		}
 
-				.service {
-					position: relative;
-					border-radius: 15px;
-					color: $dark-grey;
-					height: 90px;
-					width: 160px;
-					padding: 10px;
-					text-align: left;
-					transition: all 0.4s ease;
+		.s2 {
+			grid-area: s2;
+			background: $light-blue;
+			color: white;
 
-					&:hover {
-						-webkit-box-shadow: 10px 10px 20px 0px
-							rgba(50, 50, 50, 0.55);
-						-moz-box-shadow: 10px 10px 20px 0px
-							rgba(50, 50, 50, 0.55);
-						box-shadow: 10px 10px 20px 0px rgba(50, 50, 50, 0.55);
-						color: $black;
-					}
+			p {
+				color: white;
+			}
 
-					&:active {
-						background: $light-grey;
+			&:hover {
+				color: white;
+			}
+		}
 
-						p {
-							color: white;
-						}
-					}
+		.s3 {
+			grid-area: s3;
+			background: white;
+			border: 1px solid $light-blue;
+		}
 
-					p {
-						display: none;
-					}
+		.s4 {
+			grid-area: s4;
+			background: white;
+			border: 1px solid $light-blue;
+		}
 
-					.htag {
-						position: relative;
-						bottom: auto;
-						font-weight: 400;
-						font-size: 14px;
-					}
-				}
+		.s5 {
+			grid-area: s5;
+			background: $orange;
+			color: white;
+			position: relative;
+			top: 60px;
 
-				.s1 {
-					grid-area: s1;
-					background: white;
-					border: 1px solid $light-blue;
-				}
+			p {
+				color: white;
+			}
 
-				.s2 {
-					grid-area: s2;
-					background: $light-blue;
-					color: white;
+			@media (max-width: 1000px) {
+				top: 0;
+			}
+		}
 
-					p {
-						color: white;
-					}
+		.s6 {
+			grid-area: s6;
+			border: 1px solid $light-blue;
+			position: relative;
+			top: 60px;
 
-					&:hover {
-						color: white;
-					}
-				}
+			@media (max-width: 1000px) {
+				top: 0;
+			}
+		}
 
-				.s3 {
-					grid-area: s3;
-					background: white;
-					border: 1px solid $light-blue;
-				}
+		.s7 {
+			grid-area: s7;
+			position: relative;
+			border: 1px solid $light-blue;
+			top: 60px;
 
-				.s4 {
-					grid-area: s4;
-					background: white;
-					border: 1px solid $light-blue;
-				}
+			@media (max-width: 1000px) {
+				top: 0;
+			}
+		}
 
-				.s5 {
-					grid-area: s5;
-					background: $orange;
-					color: white;
-					position: relative;
-					top: 0px;
+		.s8 {
+			grid-area: s8;
+			background: $light-orange;
+			color: $orange;
+			position: relative;
+			top: 60px;
 
-					p {
-						color: white;
-					}
-				}
+			@media (max-width: 1000px) {
+				top: 0;
+			}
+		}
 
-				.s6 {
-					grid-area: s6;
-					border: 1px solid $light-blue;
-					position: relative;
-					top: 0px;
-				}
+		.s9 {
+			grid-area: s9;
+			border: 1px solid $light-blue;
+			position: relative;
+			top: -60px;
 
-				.s7 {
-					grid-area: s7;
-					position: relative;
-					border: 1px solid $light-blue;
-					top: 0px;
-				}
+			@media (max-width: 1000px) {
+				top: 0;
+			}
+		}
 
-				.s8 {
-					grid-area: s8;
-					background: $light-orange;
-					color: $orange;
-					position: relative;
-					top: 00px;
-				}
+		.description {
+			grid-area: description;
+			padding-left: 60px;
 
-				.s9 {
-					grid-area: s9;
-					border: 1px solid $light-blue;
-					position: relative;
-					top: 0px;
-				}
+			ul {
+				padding-top: 20px;
+				padding-left: 20px;
+			}
 
-				.description {
-					grid-area: description;
-					padding-left: 0px;
+			@media (max-width: 700px) {
+				display: none;
+			}
 
-					p {
-						margin-top: 20px;
-					}
-				}
+			@media (max-width: 1000px) {
+				padding-left: 0;
 			}
 		}
 	}
 }
+
+//================================================================================

@@ -1,0 +1,150 @@
+@import '../../styles/colors';
+
+.mainPrices {
+	padding: 100px 30px;
+	position: relative;
+
+	.container {
+		.htag {
+			font-weight: 600;
+			text-align: center;
+		}
+
+		.mainPrices_wrap {
+			padding-top: 100px;
+			display: grid;
+			justify-content: center;
+			justify-items: center;
+			grid-template-columns: 1fr 250px 1fr;
+
+			.price {
+				max-width: 350px;
+				padding: 30px 20px;
+				line-height: 21px;
+
+				ul {
+					padding-left: 20px;
+					padding-top: 20px;
+					padding-bottom: 20px;
+				}
+			}
+
+			.abonent {
+				border: 5px solid $orange;
+				border-radius: 20px;
+				background: white;
+			}
+
+			.project {
+				border: 5px solid $light-blue;
+				border-radius: 20px;
+				background: white;
+			}
+
+			img {
+				width: 250px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.mainPrices {
+		padding: 100px 30px;
+		position: relative;
+
+		.container {
+			.htag {
+				font-weight: 600;
+				text-align: center;
+			}
+
+			.mainPrices_wrap {
+				padding-top: 100px;
+				display: grid;
+				justify-content: center;
+				justify-items: center;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+
+				.price {
+					max-width: 350px;
+					padding: 30px 20px;
+					line-height: 21px;
+
+					ul {
+						padding-left: 20px;
+						padding-top: 20px;
+					}
+				}
+
+				.abonent {
+					border: 5px solid $orange;
+					border-radius: 20px;
+					background: white;
+				}
+
+				.project {
+					border: 5px solid $light-blue;
+					border-radius: 20px;
+					background: white;
+				}
+
+				img {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.mainPrices {
+		padding: 60px 0;
+		position: relative;
+
+		.container {
+			.htag {
+				font-weight: 600;
+				text-align: center;
+			}
+
+			.mainPrices_wrap {
+				padding-top: 60px;
+				display: grid;
+				justify-content: center;
+				justify-items: center;
+				grid-template-columns: 1fr;
+				gap: 20px;
+
+				.price {
+					max-width: 350px;
+					padding: 20px 10px;
+					line-height: 18px;
+					font-size: 14px;
+
+					ul {
+						padding-left: 20px;
+						padding-top: 20px;
+					}
+				}
+
+				.abonent {
+					border: 5px solid $orange;
+					border-radius: 20px;
+					background: white;
+				}
+
+				.project {
+					border: 5px solid $light-blue;
+					border-radius: 20px;
+					background: white;
+				}
+
+				img {
+					display: none;
+				}
+			}
+		}
+	}
+}

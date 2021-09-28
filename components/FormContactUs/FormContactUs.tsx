@@ -18,8 +18,20 @@ export function FormContactUs( {className, children, ...props}: FormContactUsPro
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
 	const [error, setIsError] = useState<string>();
 
+	const date = () => {
+		const date = new Date();
+		const yyyy = date.getFullYear();
+		const mm = (date.getMonth() + 1 < 10) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1); 
+		const dd = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+		const hh = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
+		const min = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+		
+		const d = `${yyyy}-${mm}-${dd}T${hh}:${min}`;
+		return d;
+	};
+
 	const onSubmit = async (formData: IFormContactUS) => {
-		console.log(formData);
+		//console.log(formData);
 		try {
 			const { data } = await axios.post(API.topPage.contactUs + 'contactus.json/', {...formData});
 			if (data) {
@@ -104,6 +116,16 @@ export function FormContactUs( {className, children, ...props}: FormContactUsPro
 						error={errors.message}
 						/>
 				</label>
+			</div>
+
+			<div className={styles.date}>
+					<Input 
+						{...register('datetime', {
+							
+						})} 
+						type='datetime-local'
+						value={date()}
+					/>
 			</div>
 
 			<div className={styles.submit}>

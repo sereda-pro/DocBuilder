@@ -8,20 +8,22 @@ import { Container } from '../UI';
 
 export function HeaderNav( {navi, children, ...props}: HeaderNavProps): JSX.Element {
 
-	const [anchor, setAnchor] = useState<string>();
+	const [anchor, setAnchor] = useState<string>('');
+	
 	useEffect(() => {
+
 		const element = document.getElementById(anchor);
 		
 		if (element != null) {
-				window.scroll({
+			window.scroll({
 				left: 0,
-				top: element.offsetTop + 30,
+				top: element.getBoundingClientRect().y,
 				behavior: 'smooth'
 			});
 		}
 	}, [anchor]);
 
-	const handlerOnClickAnchor = (e, anchor: string) => {
+	const handlerOnClickAnchor = (e: any, anchor: string) => {
 		e.preventDefault();
 		setAnchor(anchor);
 	};
@@ -32,7 +34,10 @@ export function HeaderNav( {navi, children, ...props}: HeaderNavProps): JSX.Elem
 				href={item.link} 
 				className={styles.navi_link} 
 				key={i}
-				onClick = {(e) => handlerOnClickAnchor(e, item.anchor)}
+				onClick = {(e: any) => {
+					//console.log('клик:' + item.anchor);
+					handlerOnClickAnchor(e, item.anchor);
+				}}
 			>
 				{item.title}
 			</a>

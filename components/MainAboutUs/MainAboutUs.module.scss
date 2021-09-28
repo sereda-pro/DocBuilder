@@ -1,12 +1,13 @@
 @import '../../styles/colors';
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
 
-.about {
+.container {
 	padding-top: 100px;
 	padding-bottom: 50px;
 
-	.htag {
+	> .htag {
 		font-weight: 600;
+		text-align: center;
 
 		mark {
 			background-color: $orange;
@@ -23,7 +24,7 @@
 		grid-template-rows: repeat(4, auto);
 		align-items: center;
 		justify-items: center;
-		justify-content: start;
+		justify-content: center;
 		grid-template-areas:
 			'a1 image .'
 			'a2 image a5'
@@ -189,10 +190,6 @@
 	}
 
 	@media (max-width: 760px) {
-		& {
-			padding: 40px 40px;
-		}
-
 		.about_wrap {
 			margin-top: 40px;
 			position: relative;
@@ -296,12 +293,6 @@
 				background: $light-orange;
 				justify-self: start;
 			}
-		}
-	}
-
-	@media (max-width: 400px) {
-		& {
-			padding: 40px 10px;
 		}
 	}
 }
