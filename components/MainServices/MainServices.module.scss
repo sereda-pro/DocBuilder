@@ -1,7 +1,7 @@
 @import '../../styles/colors';
 
 .container {
-	padding-top: 100px;
+	padding: 100px 30px;
 	position: relative;
 
 	img {
@@ -23,7 +23,8 @@
 	}
 
 	.services_wrap {
-		margin-top: 80px;
+		//margin: 80px 0 60px 0;
+		padding: 100px 0 60px 0;
 		position: relative;
 		display: grid;
 		grid-template-columns: 180px 180px 180px 1fr;
