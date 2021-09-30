@@ -16,7 +16,7 @@ export function MainContactUs( {id, children, ...props}: MainContactUsProps): JS
 					Наши юристы специализируются на работе со средним и малым бизнесом и хорошо разбираются в его правовых ошибках.
 				</Htag>
 				<div className={styles.block_wrap}>
-					<div></div>
+					<div className={styles.img}></div>
 					<div className={styles.form}>
 						<FormContactUs />
 					</div>
